@@ -1,4 +1,4 @@
-import {state, loadRecipe} from './model.js'
+import { state, loadRecipe } from './model.js'
 import recipeView from './views/recipeView.js';
 
 import 'core-js/stable';
@@ -20,9 +20,11 @@ const controlRecipes = async function () {
     recipeView.render(state.recipe);
 
   } catch (error) {
-    alert(error);
+    console.error(error);
   }
 };
-controlRecipes();
 
-['hashchange', 'load'].forEach(ev => window.addEventListener(ev, controlRecipes));
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
