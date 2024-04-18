@@ -3,6 +3,7 @@ import {
   loadRecipe,
   loadSearchResults,
   getSearchResultsPage,
+  updateServings,
 } from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
@@ -46,8 +47,14 @@ const controlPagination = function (gotoPage) {
   paginationView.render(state.search);
 };
 
+const controlServings = function (newServings) {
+  updateServings(newServings);
+  recipeView.render(state.recipe);
+};
+
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
