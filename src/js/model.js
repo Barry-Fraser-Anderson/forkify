@@ -1,18 +1,18 @@
-import { API_URL } from "./config";
-import { getJSON } from "./helpers";
+import { API_URL } from './config';
+import { getJSON } from './helpers';
 
 const state = {
-    recipe: {},
-    search: {
-      query: '',
-      results: [],
-    }
+  recipe: {},
+  search: {
+    query: '',
+    results: [],
+  },
 };
 
 const loadRecipe = async function (id) {
   try {
     const data = await getJSON(`${API_URL}/${id}`);
-    
+
     const { recipe } = data.data;
     state.recipe = {
       id: recipe.id,
@@ -26,7 +26,7 @@ const loadRecipe = async function (id) {
     };
   } catch (error) {
     console.error(error);
-    throw(error);
+    throw error;
   }
 };
 
@@ -42,13 +42,13 @@ const loadSearchResults = async function (query) {
         title: rec.title,
         publisher: rec.publisher,
         sourceUrl: rec.source_url,
-        image: rec.image_url,      
+        image: rec.image_url,
       };
     });
     console.log(state.search.results);
   } catch (error) {
     console.error(error);
-    throw(error);
+    throw error;
   }
 };
 
