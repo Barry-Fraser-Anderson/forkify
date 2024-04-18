@@ -47,7 +47,6 @@ const loadSearchResults = async function (query) {
         image: rec.image_url,
       };
     });
-    console.log(state.search.results);
   } catch (error) {
     console.error(error);
     throw error;
