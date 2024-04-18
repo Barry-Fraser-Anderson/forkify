@@ -1,4 +1,9 @@
-import { state, loadRecipe, loadSearchResults } from './model.js';
+import {
+  state,
+  loadRecipe,
+  loadSearchResults,
+  getSearchResultsPage,
+} from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
@@ -28,7 +33,7 @@ const controlSearchResults = async function () {
 
     resultsView.renderSpinner();
     await loadSearchResults(query);
-    resultsView.render(state.search.results);
+    resultsView.render(getSearchResultsPage());
   } catch (error) {
     console.error(error);
   }
