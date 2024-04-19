@@ -4,6 +4,8 @@ import {
   loadSearchResults,
   getSearchResultsPage,
   updateServings,
+  addBookmark,
+  deleteBookmark,
 } from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
@@ -57,9 +59,17 @@ const controlServings = function (newServings) {
   recipeView.update(state.recipe);
 };
 
+const controlAddBookmark = function () {
+  if (!state.recipe.bookmarked) addBookmark(state.recipe);
+  else deleteBookmark(state.recipe.id);
+
+  recipeView.update(state.recipe);
+};
+
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
+  recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
