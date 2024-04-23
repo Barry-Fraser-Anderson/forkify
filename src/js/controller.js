@@ -6,7 +6,7 @@ import {
   updateServings,
   addBookmark,
   deleteBookmark,
-  upLoadRecipe,
+  uploadRecipe,
 } from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
@@ -84,7 +84,7 @@ const controlBookmarks = function () {
 const controlAddRecipe = async function (newRecipe) {
   try {
     addRecipeView.renderSpinner();
-    await upLoadRecipe(newRecipe);
+    await uploadRecipe(newRecipe);
 
     // Render recipe and bookmarks
     recipeView.render(state.recipe);
@@ -92,7 +92,7 @@ const controlAddRecipe = async function (newRecipe) {
     bookmarksView.render(state.bookmarks);
 
     // Change ID in the URL
-    window.history.pushState(null, '', state.recipe.id);
+    window.history.pushState(null, '', `#${state.recipe.id}`);
 
     // Close the form
     setTimeout(function () {

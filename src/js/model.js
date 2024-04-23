@@ -108,7 +108,7 @@ const init = function () {
 };
 init();
 
-const upLoadRecipe = async function (newRecipe) {
+const uploadRecipe = async function (newRecipe) {
   try {
     const ingredients = Object.entries(newRecipe)
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
@@ -145,5 +145,5 @@ export {
   updateServings,
   addBookmark,
   deleteBookmark,
-  upLoadRecipe,
+  uploadRecipe,
 };
