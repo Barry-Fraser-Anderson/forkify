@@ -11,4 +11,6 @@ Topics covered:
 - Publisher/Subscriber pattern
 - Helpers and configuration files
 - Pagination
-- 
+- Partial DOM updates
+- Local storage
+- Uploading data
