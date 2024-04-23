@@ -30,6 +30,11 @@ class BookmarksView extends View {
             <h4 class="preview__title">${recipe.title}</h4>
             <p class="preview__publisher">${recipe.publisher}</p>
           </div>
+          <div class="recipe__user-generated ${recipe.key ? '' : 'hidden'}">
+            <svg>
+              <use href="${icons}#icon-user"</use>
+            </svg>
+          </div>
         </a>
       </li>`;
   }
