@@ -21,8 +21,7 @@ Topics covered:
 - Uploading data
 
 <div>
-<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/cd6c7120-74a2-47dc-aef3-cdb78271b118" alt="search screen" width="300">  
-<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/1e744e8e-a20c-4fb2-9139-cfc0bc3fa3a9" alt="upload recipe" width="300"> 
-<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/4affce24-f13d-460f-b339-7fe11c5be7a9" alt="bookmarks" width="300">  
+<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/cd6c7120-74a2-47dc-aef3-cdb78271b118" alt="search screen" title="Main search screen" width="280">  
+<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/1e744e8e-a20c-4fb2-9139-cfc0bc3fa3a9" alt="upload recipe" title="Image upload form" width="280"> 
+<img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/4affce24-f13d-460f-b339-7fe11c5be7a9" alt="bookmarks" title="Bookmarks menu" width="280">  
 </div>
-
