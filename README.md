@@ -9,6 +9,11 @@ The recipes are accessed via a REST API (not included here).
 The recipes are searchable and may be bookmarked.
 New recipes may be uploaded.
 
+NOTE:
+After completing this project I observed that it was only possible to upload a single recipe per session, as the form element had been over-written by the 'success/error' message.
+I fixed this by adding a 'resetForm' method.
+
+
 Topics covered:
 
 - Load and hashchange events
