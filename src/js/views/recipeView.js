@@ -22,12 +22,23 @@ class RecipeView extends View {
     });
   }
 
+  addHandlerDeleteRecipe(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn--delete-recipe');
+      if (!btn) return;
+
+      const id = btn.dataset.id;
+      handler(id);
+    });
+  }
+
   addHandlerAddBookmark(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--bookmark');
       if (!btn) return;
 
-      handler();
+      const id = btn.dataset.id;
+      handler(id);
     });
   }
 
@@ -89,6 +100,12 @@ class RecipeView extends View {
       this._data.bookmarked ? '-fill' : ''
     }">
             </use>
+          </svg>
+        </button>
+        <button class="btn--round btn--delete-recipe"
+          data-id="${this._data.id}">
+          <svg>
+            <use href="${icons}#icon-edit"</use>
           </svg>
         </button>
       </div>

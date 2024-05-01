@@ -7,6 +7,7 @@ import {
   addBookmark,
   deleteBookmark,
   uploadRecipe,
+  deleteRecipe,
 } from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
@@ -103,10 +104,23 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const controlDeleteRecipe = async function (id) {
+  try {
+    await deleteRecipe(id);
+    deleteBookmark(id);
+    bookmarksView.render(state.bookmarks);
+
+    recipeView.renderMessage('Recipe was successfully deleted');
+  } catch (error) {
+    recipeView.renderError(error.message);
+  }
+};
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
+  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);

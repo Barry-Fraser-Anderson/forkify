@@ -1,5 +1,5 @@
 import { API_KEY, API_URL, RESULTS_PER_PAGE } from './config';
-import { AJAX } from './helpers';
+import { AJAX, AJAXdelete } from './helpers';
 
 const state = {
   recipe: {},
@@ -37,7 +37,6 @@ const loadRecipe = async function (id) {
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
   } catch (error) {
-    console.error(error);
     throw error;
   }
 };
@@ -60,7 +59,6 @@ const loadSearchResults = async function (query) {
     });
     state.search.page = 1;
   } catch (error) {
-    console.error(error);
     throw error;
   }
 };
@@ -96,6 +94,8 @@ const deleteBookmark = function (id) {
 
   // Mark current recipe as NOT bookmarked
   if (id === state.recipe.id) state.recipe.bookmarked = false;
+
+  persistBookmarks();
 };
 
 const persistBookmarks = function () {
@@ -137,6 +137,14 @@ const uploadRecipe = async function (newRecipe) {
   }
 };
 
+const deleteRecipe = async function (id) {
+  try {
+    await AJAXdelete(`${API_URL}/${id}?key=${API_KEY}`);
+  } catch (error) {
+    throw error;
+  }
+};
+
 export {
   state,
   loadRecipe,
@@ -146,4 +154,5 @@ export {
   addBookmark,
   deleteBookmark,
   uploadRecipe,
+  deleteRecipe,
 };

@@ -30,6 +30,19 @@ export const AJAX = async function (url, uploadData) {
   }
 };
 
+export const AJAXdelete = async function (url) {
+  try {
+    const fetchPro = fetch(url, {
+      method: 'DELETE',
+    });
+
+    const res = await Promise.race([fetchPro, timeout(TIMEOUT_SECS)]);
+    if (!res.ok) throw new Error('Failed to delete recipe');
+  } catch (error) {
+    throw error;
+  }
+};
+
 // export const getJSON = async function (url) {
 //   try {
 //     const res = await Promise.race([fetch(url), timeout(TIMEOUT_SECS)]);
@@ -47,7 +60,7 @@ export const AJAX = async function (url, uploadData) {
 //     const fetchPro = fetch(url, {
 //       method: 'POST',
 //       headers: {
-//         'Content-Type': 'application/JSON',
+//         'Content-Type': 'application/json',
 //       },
 //       body: JSON.stringify(uploadData),
 //     });
