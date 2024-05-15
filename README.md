@@ -5,20 +5,19 @@ From the Udemy course: The Complete Javascript Course: From Zero to Expert!
 
 https://www.udemy.com/course/the-complete-javascript-course/
 
-# Synopsis
+## Synopsis
 The application is a simple recipe database. 
 The recipes are accessed via a REST API (not included here).
 The recipes are searchable and may be bookmarked.
 New recipes may be uploaded.
 
-# Additional Features and Fixes after Course completion:
-1. I observed that it was only possible to upload a single recipe per session, as the form element had been over-written by the 'success/error' message.
-I fixed this by adding a 'resetForm' method.
+### Additional Features and Fixes after Course completion:
+1. It was observed that it was only possible to upload a single recipe per session, as the form element had been over-written by the 'success/error' message.
+This was fixed this by adding a 'resetForm' method.
 
 2. Added a 'delete recipe' feature.
 
-
-# Topics covered:
+## Topics covered:
 
 - Load and hashchange events
 - MVC Architecture
@@ -29,6 +28,7 @@ I fixed this by adding a 'resetForm' method.
 - Local storage
 - Uploading data
 
+## Screenshots
 <div>
 <img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/cd6c7120-74a2-47dc-aef3-cdb78271b118" alt="search screen" title="Main search screen" width="280">  
 <img src="https://github.com/Barry-Fraser-Anderson/forkify/assets/112425916/1e744e8e-a20c-4fb2-9139-cfc0bc3fa3a9" alt="upload recipe" title="Image upload form" width="280"> 
