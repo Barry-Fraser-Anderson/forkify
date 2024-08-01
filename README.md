@@ -5,15 +5,15 @@ From the Udemy course: The Complete Javascript Course: From Zero to Expert!
 
 https://www.udemy.com/course/the-complete-javascript-course/
 
-## Synopsis
+## Description
 The application is a simple recipe database. 
 The recipes are accessed via a REST API (not included here).
 The recipes are searchable and may be bookmarked.
 New recipes may be uploaded.
 
 ### Additional Features and Fixes after Course completion:
-1. It was observed that it was only possible to upload a single recipe per session, as the form element had been over-written by the 'success/error' message.
-This was fixed this by adding a 'resetForm' method.
+1. I noted that it was only possible to upload a single recipe per session, as the form element had been over-written by the 'success/error' message.
+   This was fixed this by adding a 'resetForm' method.
 
 2. Added a 'delete recipe' feature.
 
